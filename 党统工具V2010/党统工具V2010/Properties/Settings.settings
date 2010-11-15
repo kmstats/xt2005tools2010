@@ -25,5 +25,8 @@
     <Setting Name="STR_ACL_EXIT" Type="System.String" Scope="Application">
       <Value Profile="(Default)">退出(&amp;X)</Value>
     </Setting>
+    <Setting Name="STR_AC_SELECTNONE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">清除全选(&amp;N)</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -74,5 +74,22 @@ namespace com.echo.XT2005
                 }
             }
         }
+
+        private void contextMenu_Opening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !(tvOrg.Nodes.Count > 0);
+        }
+
+        private void OnSelectNone(object sender, EventArgs e)
+        {
+            foreach (TreeNode item in tvOrg.Nodes)
+            {
+                item.Checked = false;
+                foreach (TreeNode i in item.Nodes)
+                {
+                    i.Checked = false;
+                }
+            }
+        }
     }
 }
