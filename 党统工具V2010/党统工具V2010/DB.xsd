@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DB" targetNamespace="http://tempuri.org/DB.xsd" xmlns:mstns="http://tempuri.org/DB.xsd" xmlns="http://tempuri.org/DB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="XT2007ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="XT2007ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.echo.XT2005.Properties.Settings.GlobalReference.Default.XT2007ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="D01TableAdapter" GeneratorDataComponentClassName="D01TableAdapter" Name="D01" UserDataComponentName="D01TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="XT2007ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT * FROM "PUBLIC"."D01"</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="D0101" DataSetColumn="D0101" />
+              <Mapping SourceColumn="D0107" DataSetColumn="D0107" />
+              <Mapping SourceColumn="D0111" DataSetColumn="D0111" />
+              <Mapping SourceColumn="D0121" DataSetColumn="D0121" />
+              <Mapping SourceColumn="D0123" DataSetColumn="D0123" />
+              <Mapping SourceColumn="D0127" DataSetColumn="D0127" />
+              <Mapping SourceColumn="D0127A" DataSetColumn="D0127A" />
+              <Mapping SourceColumn="D0144" DataSetColumn="D0144" />
+              <Mapping SourceColumn="D0165" DataSetColumn="D0165" />
+              <Mapping SourceColumn="D0168" DataSetColumn="D0168" />
+              <Mapping SourceColumn="D0171" DataSetColumn="D0171" />
+              <Mapping SourceColumn="D0174" DataSetColumn="D0174" />
+              <Mapping SourceColumn="D0177" DataSetColumn="D0177" />
+              <Mapping SourceColumn="D0181" DataSetColumn="D0181" />
+              <Mapping SourceColumn="D0184" DataSetColumn="D0184" />
+              <Mapping SourceColumn="SORTID" DataSetColumn="SORTID" />
+              <Mapping SourceColumn="D0191" DataSetColumn="D0191" />
+              <Mapping SourceColumn="D0199" DataSetColumn="D0199" />
+              <Mapping SourceColumn="D0179" DataSetColumn="D0179" />
+              <Mapping SourceColumn="D0193" DataSetColumn="D0193" />
+              <Mapping SourceColumn="D0194" DataSetColumn="D0194" />
+              <Mapping SourceColumn="D0178" DataSetColumn="D0178" />
+              <Mapping SourceColumn="D0192" DataSetColumn="D0192" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="XT2007ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBySubOrg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBySubOrg" GeneratorSourceName="FillBySubOrg" GetMethodModifier="Public" GetMethodName="GetDataBySubOrg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBySubOrg" UserSourceName="FillBySubOrg">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   D0101, D0107
+FROM      XT2007."PUBLIC".D01
+WHERE   (D0127 =
+                    (SELECT   D0107
+                     FROM      XT2007."PUBLIC".D01 D01_1
+                     WHERE   (D0127 = '')))
+ORDER BY D0107</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="XT2007ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByTopOrg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTopOrg" GeneratorSourceName="FillByTopOrg" GetMethodModifier="Public" GetMethodName="GetDataByTopOrg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTopOrg" UserSourceName="FillByTopOrg">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   D0101, D0107
+FROM      XT2007."PUBLIC".D01
+WHERE   (D0127 = '')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DB" msprop:Generator_UserDSName="DB" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="D01" msprop:Generator_UserTableName="D01" msprop:Generator_RowDeletedName="D01RowDeleted" msprop:Generator_TableClassName="D01DataTable" msprop:Generator_RowChangedName="D01RowChanged" msprop:Generator_RowClassName="D01Row" msprop:Generator_RowChangingName="D01RowChanging" msprop:Generator_RowEvArgName="D01RowChangeEvent" msprop:Generator_RowEvHandlerName="D01RowChangeEventHandler" msprop:Generator_TablePropName="D01" msprop:Generator_TableVarName="tableD01" msprop:Generator_RowDeletingName="D01RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="D0101" msprop:Generator_UserColumnName="D0101" msprop:Generator_ColumnPropNameInRow="D0101" msprop:Generator_ColumnVarNameInTable="columnD0101" msprop:Generator_ColumnPropNameInTable="D0101Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0107" msprop:Generator_UserColumnName="D0107" msprop:Generator_ColumnPropNameInRow="D0107" msprop:Generator_ColumnVarNameInTable="columnD0107" msprop:Generator_ColumnPropNameInTable="D0107Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="68" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0111" msprop:Generator_UserColumnName="D0111" msprop:Generator_ColumnPropNameInRow="D0111" msprop:Generator_ColumnVarNameInTable="columnD0111" msprop:Generator_ColumnPropNameInTable="D0111Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0121" msprop:Generator_UserColumnName="D0121" msprop:Generator_ColumnPropNameInRow="D0121" msprop:Generator_ColumnVarNameInTable="columnD0121" msprop:Generator_ColumnPropNameInTable="D0121Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0123" msprop:Generator_UserColumnName="D0123" msprop:Generator_ColumnPropNameInRow="D0123" msprop:Generator_ColumnVarNameInTable="columnD0123" msprop:Generator_ColumnPropNameInTable="D0123Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0127" msprop:Generator_UserColumnName="D0127" msprop:Generator_ColumnPropNameInRow="D0127" msprop:Generator_ColumnVarNameInTable="columnD0127" msprop:Generator_ColumnPropNameInTable="D0127Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="68" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0127A" msprop:Generator_UserColumnName="D0127A" msprop:Generator_ColumnPropNameInRow="D0127A" msprop:Generator_ColumnVarNameInTable="columnD0127A" msprop:Generator_ColumnPropNameInTable="D0127AColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0144" msprop:Generator_UserColumnName="D0144" msprop:Generator_ColumnPropNameInRow="D0144" msprop:Generator_ColumnVarNameInTable="columnD0144" msprop:Generator_ColumnPropNameInTable="D0144Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0165" msprop:Generator_UserColumnName="D0165" msprop:Generator_ColumnPropNameInRow="D0165" msprop:Generator_ColumnVarNameInTable="columnD0165" msprop:Generator_ColumnPropNameInTable="D0165Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0168" msprop:Generator_UserColumnName="D0168" msprop:Generator_ColumnPropNameInRow="D0168" msprop:Generator_ColumnVarNameInTable="columnD0168" msprop:Generator_ColumnPropNameInTable="D0168Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0171" msprop:Generator_UserColumnName="D0171" msprop:Generator_ColumnPropNameInRow="D0171" msprop:Generator_ColumnVarNameInTable="columnD0171" msprop:Generator_ColumnPropNameInTable="D0171Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0174" msprop:Generator_UserColumnName="D0174" msprop:Generator_ColumnPropNameInRow="D0174" msprop:Generator_ColumnVarNameInTable="columnD0174" msprop:Generator_ColumnPropNameInTable="D0174Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="68" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0177" msprop:Generator_UserColumnName="D0177" msprop:Generator_ColumnPropNameInRow="D0177" msprop:Generator_ColumnVarNameInTable="columnD0177" msprop:Generator_ColumnPropNameInTable="D0177Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0181" msprop:Generator_UserColumnName="D0181" msprop:Generator_ColumnPropNameInRow="D0181" msprop:Generator_ColumnVarNameInTable="columnD0181" msprop:Generator_ColumnPropNameInTable="D0181Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0184" msprop:Generator_UserColumnName="D0184" msprop:Generator_ColumnPropNameInRow="D0184" msprop:Generator_ColumnVarNameInTable="columnD0184" msprop:Generator_ColumnPropNameInTable="D0184Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SORTID" msprop:Generator_UserColumnName="SORTID" msprop:Generator_ColumnPropNameInRow="SORTID" msprop:Generator_ColumnVarNameInTable="columnSORTID" msprop:Generator_ColumnPropNameInTable="SORTIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0191" msprop:Generator_UserColumnName="D0191" msprop:Generator_ColumnPropNameInRow="D0191" msprop:Generator_ColumnVarNameInTable="columnD0191" msprop:Generator_ColumnPropNameInTable="D0191Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0199" msprop:Generator_UserColumnName="D0199" msprop:Generator_ColumnPropNameInRow="D0199" msprop:Generator_ColumnVarNameInTable="columnD0199" msprop:Generator_ColumnPropNameInTable="D0199Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0179" msprop:Generator_UserColumnName="D0179" msprop:Generator_ColumnPropNameInRow="D0179" msprop:Generator_ColumnVarNameInTable="columnD0179" msprop:Generator_ColumnPropNameInTable="D0179Column" type="xs:int" minOccurs="0" />
+              <xs:element name="D0193" msprop:Generator_UserColumnName="D0193" msprop:Generator_ColumnPropNameInRow="D0193" msprop:Generator_ColumnVarNameInTable="columnD0193" msprop:Generator_ColumnPropNameInTable="D0193Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0194" msprop:Generator_UserColumnName="D0194" msprop:Generator_ColumnPropNameInRow="D0194" msprop:Generator_ColumnVarNameInTable="columnD0194" msprop:Generator_ColumnPropNameInTable="D0194Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D0178" msprop:Generator_UserColumnName="D0178" msprop:Generator_ColumnPropNameInRow="D0178" msprop:Generator_ColumnVarNameInTable="columnD0178" msprop:Generator_ColumnPropNameInTable="D0178Column" type="xs:int" minOccurs="0" />
+              <xs:element name="D0192" msprop:Generator_UserColumnName="D0192" msprop:Generator_ColumnPropNameInRow="D0192" msprop:Generator_ColumnVarNameInTable="columnD0192" msprop:Generator_ColumnPropNameInTable="D0192Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:D01" />
+      <xs:field xpath="mstns:D0107" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

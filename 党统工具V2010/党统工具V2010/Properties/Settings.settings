@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="com.echo.XT2005.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="STR_TITLE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">党统工具V2010</Value>
+    </Setting>
+    <Setting Name="STR_MENU_SYSTEM" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">系统(&amp;S)</Value>
+    </Setting>
+    <Setting Name="STR_ACL_LINK" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">连接数据库(&amp;L)</Value>
+    </Setting>
+    <Setting Name="XT2007ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Driver={Kingbase ODBC driver};database=XT2007;server=LOCALHOST;port=55321;uid=SYSTEM;pwd=MANAGER&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Driver={Kingbase ODBC driver};database=XT2007;server=LOCALHOST;port=55321;uid=SYSTEM;pwd=MANAGER</Value>
+    </Setting>
+    <Setting Name="STR_TAB_RPTCHK" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">报表校核</Value>
+    </Setting>
+    <Setting Name="STR_ACL_EXIT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">退出(&amp;X)</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
