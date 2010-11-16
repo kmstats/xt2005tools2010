@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0AFFA6A2-6632-40EB-899A-6761CBC61BA2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -129,6 +129,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SetForm.resx">
       <DependentUpon>SetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -150,7 +151,9 @@
     <Content Include="Controls\Actions\ActionList.bmp" />
     <Content Include="Controls\Actions\Images\Action.bmp" />
     <Content Include="Controls\Actions\Images\ActionList.bmp" />
-    <None Include="app.config" />
+    <Content Include="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Controls\Actions\Design\vssver2.scc" />
     <None Include="Controls\Actions\Images\vssver2.scc" />
     <None Include="Controls\Actions\vssver2.scc" />
