@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cLASSIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rPTTEMPLATECLASSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB = new com.echo.XT2005.DB();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tRPTDURATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.t_rpt_durationTableAdapter = new com.echo.XT2005.DBTableAdapters.T_RPT_DURATIONTableAdapter();
-            this.rpttemplateclassTableAdapter = new com.echo.XT2005.DBTableAdapters.RPTTEMPLATECLASSTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cLASSIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bEGINTIMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eNDTIMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tRPTDURATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.t_rpt_durationTableAdapter = new com.echo.XT2005.DBTableAdapters.T_RPT_DURATIONTableAdapter();
+            this.rpttemplateclassTableAdapter = new com.echo.XT2005.DBTableAdapters.RPTTEMPLATECLASSTableAdapter();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPTTEMPLATECLASSBindingSource)).BeginInit();
@@ -88,6 +88,22 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(273, 228);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // cLASSIDDataGridViewTextBoxColumn
+            // 
+            this.cLASSIDDataGridViewTextBoxColumn.DataPropertyName = "CLASSID";
+            this.cLASSIDDataGridViewTextBoxColumn.HeaderText = "编号";
+            this.cLASSIDDataGridViewTextBoxColumn.Name = "cLASSIDDataGridViewTextBoxColumn";
+            this.cLASSIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cLASSIDDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // nAMEDataGridViewTextBoxColumn
+            // 
+            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.HeaderText = "名称";
+            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nAMEDataGridViewTextBoxColumn.Width = 54;
             // 
             // rPTTEMPLATECLASSBindingSource
             // 
@@ -135,55 +151,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(287, 227);
             this.dataGridView2.TabIndex = 0;
             // 
-            // tRPTDURATIONBindingSource
-            // 
-            this.tRPTDURATIONBindingSource.DataMember = "T_RPT_DURATION";
-            this.tRPTDURATIONBindingSource.DataSource = this.dB;
-            // 
-            // t_rpt_durationTableAdapter
-            // 
-            this.t_rpt_durationTableAdapter.ClearBeforeFill = true;
-            // 
-            // rpttemplateclassTableAdapter
-            // 
-            this.rpttemplateclassTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(213, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_OK;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(312, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_CANCEL;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // cLASSIDDataGridViewTextBoxColumn
-            // 
-            this.cLASSIDDataGridViewTextBoxColumn.DataPropertyName = "CLASSID";
-            this.cLASSIDDataGridViewTextBoxColumn.HeaderText = "编号";
-            this.cLASSIDDataGridViewTextBoxColumn.Name = "cLASSIDDataGridViewTextBoxColumn";
-            this.cLASSIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cLASSIDDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // nAMEDataGridViewTextBoxColumn
-            // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "名称";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
-            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nAMEDataGridViewTextBoxColumn.Width = 54;
-            // 
             // dURNAMEDataGridViewTextBoxColumn
             // 
             this.dURNAMEDataGridViewTextBoxColumn.DataPropertyName = "DURNAME";
@@ -208,19 +175,55 @@
             this.eNDTIMEDataGridViewTextBoxColumn.ReadOnly = true;
             this.eNDTIMEDataGridViewTextBoxColumn.Width = 78;
             // 
+            // tRPTDURATIONBindingSource
+            // 
+            this.tRPTDURATIONBindingSource.DataMember = "T_RPT_DURATION";
+            this.tRPTDURATIONBindingSource.DataSource = this.dB;
+            // 
+            // t_rpt_durationTableAdapter
+            // 
+            this.t_rpt_durationTableAdapter.ClearBeforeFill = true;
+            // 
+            // rpttemplateclassTableAdapter
+            // 
+            this.rpttemplateclassTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnOK
+            // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Location = new System.Drawing.Point(213, 266);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 2;
+            this.btnOK.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_OK;
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(312, 266);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_CANCEL;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // SetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 300);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_SETRPT;
+            this.Activated += new System.EventHandler(this.SetForm_Activated);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPTTEMPLATECLASSBindingSource)).EndInit();
@@ -243,8 +246,8 @@
         private System.Windows.Forms.BindingSource tRPTDURATIONBindingSource;
         private com.echo.XT2005.DBTableAdapters.T_RPT_DURATIONTableAdapter t_rpt_durationTableAdapter;
         private com.echo.XT2005.DBTableAdapters.RPTTEMPLATECLASSTableAdapter rpttemplateclassTableAdapter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLASSIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dURNAMEDataGridViewTextBoxColumn;

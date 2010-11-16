@@ -62,6 +62,11 @@ namespace com.echo.XT2005
             Close();
         }
 
+        /// <summary>
+        /// 全选所有组织
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSelectAll(object sender, EventArgs e)
         {
             foreach (TreeNode item in tvOrg.Nodes)
@@ -75,11 +80,17 @@ namespace com.echo.XT2005
             }
         }
 
+
         private void contextMenu_Opening(object sender, CancelEventArgs e)
         {
             e.Cancel = !(tvOrg.Nodes.Count > 0);
         }
 
+        /// <summary>
+        /// 取消全选
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSelectNone(object sender, EventArgs e)
         {
             foreach (TreeNode item in tvOrg.Nodes)
@@ -92,10 +103,19 @@ namespace com.echo.XT2005
             }
         }
 
+        /// <summary>
+        /// 设置报告期参数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSet(object sender, EventArgs e)
         {
             SetForm form1 = new SetForm();
-            form1.ShowDialog();
+            if (form1.ShowDialog(this) == DialogResult.OK)
+            {
+                
+                //添加读取报告期参数代码
+            }
         }
 
         private void ac_Set_Update(object sender, EventArgs e)
