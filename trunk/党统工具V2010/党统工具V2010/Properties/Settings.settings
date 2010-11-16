@@ -28,5 +28,23 @@
     <Setting Name="STR_AC_SELECTNONE" Type="System.String" Scope="Application">
       <Value Profile="(Default)">清除全选(&amp;N)</Value>
     </Setting>
+    <Setting Name="STR_AC_SELECTALL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">全选(&amp;A)</Value>
+    </Setting>
+    <Setting Name="STR_SETRPT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">设置报告期</Value>
+    </Setting>
+    <Setting Name="STR_RPTTEMPLATE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">报表模板</Value>
+    </Setting>
+    <Setting Name="STR_RPTDURATION" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">报告期</Value>
+    </Setting>
+    <Setting Name="STR_OK" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">确定(&amp;O)</Value>
+    </Setting>
+    <Setting Name="STR_CANCEL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">取消(&amp;C)</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

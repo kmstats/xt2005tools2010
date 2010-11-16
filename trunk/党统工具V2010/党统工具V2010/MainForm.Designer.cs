@@ -34,7 +34,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mainStatusbar = new System.Windows.Forms.StatusStrip();
             this.mainToolbar = new System.Windows.Forms.ToolStrip();
-            this.D01TableAdapter = new com.echo.XT2005.DBTableAdapters.D01TableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -42,15 +41,18 @@
             this.tvOrg = new System.Windows.Forms.TreeView();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.D01TableAdapter = new com.echo.XT2005.DBTableAdapters.D01TableAdapter();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainActionlist = new com.echo.Controls.Actions.ActionList();
-            this.ac_Login = new com.echo.Controls.Actions.Action();
-            this.ac_Exit = new com.echo.Controls.Actions.Action();
             this.ac_SelectAll = new com.echo.Controls.Actions.Action();
             this.ac_SelectNone = new com.echo.Controls.Actions.Action();
+            this.ac_Login = new com.echo.Controls.Actions.Action();
+            this.ac_Exit = new com.echo.Controls.Actions.Action();
+            this.ac_Set = new com.echo.Controls.Actions.Action();
             this.mainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -65,7 +67,8 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aAToolStripMenuItem});
+            this.aAToolStripMenuItem,
+            this.cToolStripMenuItem1});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(1115, 25);
@@ -102,10 +105,6 @@
             this.mainToolbar.Size = new System.Drawing.Size(1115, 25);
             this.mainToolbar.TabIndex = 2;
             this.mainToolbar.Text = "toolStrip1";
-            // 
-            // D01TableAdapter
-            // 
-            this.D01TableAdapter.ClearBeforeFill = true;
             // 
             // tabControl1
             // 
@@ -184,10 +183,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(727, 417);
+            this.tabPage2.Size = new System.Drawing.Size(1107, 594);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // D01TableAdapter
+            // 
+            this.D01TableAdapter.ClearBeforeFill = true;
             // 
             // aToolStripMenuItem
             // 
@@ -217,13 +220,31 @@
             this.cToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cToolStripMenuItem.Text = "退出(&X)";
             // 
+            // cToolStripMenuItem1
+            // 
+            this.mainActionlist.SetAction(this.cToolStripMenuItem1, this.ac_Set);
+            this.cToolStripMenuItem1.Name = "cToolStripMenuItem1";
+            this.cToolStripMenuItem1.Size = new System.Drawing.Size(96, 21);
+            this.cToolStripMenuItem1.Text = "设置报告期(&R)";
+            // 
             // mainActionlist
             // 
             this.mainActionlist.Actions.Add(this.ac_Login);
             this.mainActionlist.Actions.Add(this.ac_Exit);
             this.mainActionlist.Actions.Add(this.ac_SelectAll);
             this.mainActionlist.Actions.Add(this.ac_SelectNone);
+            this.mainActionlist.Actions.Add(this.ac_Set);
             this.mainActionlist.ContainerControl = this;
+            // 
+            // ac_SelectAll
+            // 
+            this.ac_SelectAll.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTALL;
+            this.ac_SelectAll.Execute += new System.EventHandler(this.OnSelectAll);
+            // 
+            // ac_SelectNone
+            // 
+            this.ac_SelectNone.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTNONE;
+            this.ac_SelectNone.Execute += new System.EventHandler(this.OnSelectNone);
             // 
             // ac_Login
             // 
@@ -235,15 +256,11 @@
             this.ac_Exit.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_ACL_EXIT;
             this.ac_Exit.Execute += new System.EventHandler(this.OnExit);
             // 
-            // ac_SelectAll
+            // ac_Set
             // 
-            this.ac_SelectAll.Text = "全选(&A)";
-            this.ac_SelectAll.Execute += new System.EventHandler(this.OnSelectAll);
-            // 
-            // ac_SelectNone
-            // 
-            this.ac_SelectNone.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTNONE;
-            this.ac_SelectNone.Execute += new System.EventHandler(this.OnSelectNone);
+            this.ac_Set.Text = "设置报告期(&R)";
+            this.ac_Set.Update += new System.EventHandler(this.ac_Set_Update);
+            this.ac_Set.Execute += new System.EventHandler(this.OnSet);
             // 
             // MainForm
             // 
@@ -297,6 +314,8 @@
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private com.echo.Controls.Actions.Action ac_SelectNone;
         private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem1;
+        private com.echo.Controls.Actions.Action ac_Set;
+        private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem1;
     }
 }
 

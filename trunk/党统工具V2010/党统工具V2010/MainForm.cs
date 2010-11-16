@@ -91,5 +91,16 @@ namespace com.echo.XT2005
                 }
             }
         }
+
+        private void OnSet(object sender, EventArgs e)
+        {
+            SetForm form1 = new SetForm();
+            form1.ShowDialog();
+        }
+
+        private void ac_Set_Update(object sender, EventArgs e)
+        {
+            ac_Set.Enabled = this.isLinked;
+        }
     }
 }
