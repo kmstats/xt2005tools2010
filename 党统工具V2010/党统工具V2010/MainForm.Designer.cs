@@ -41,18 +41,23 @@
             this.tvOrg = new System.Windows.Forms.TreeView();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.tvRepair = new System.Windows.Forms.TreeView();
             this.D01TableAdapter = new com.echo.XT2005.DBTableAdapters.D01TableAdapter();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRepair = new System.Windows.Forms.Button();
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainActionlist = new com.echo.Controls.Actions.ActionList();
-            this.ac_SelectAll = new com.echo.Controls.Actions.Action();
-            this.ac_SelectNone = new com.echo.Controls.Actions.Action();
             this.ac_Login = new com.echo.Controls.Actions.Action();
             this.ac_Exit = new com.echo.Controls.Actions.Action();
             this.ac_Set = new com.echo.Controls.Actions.Action();
+            this.ac_SelectAll = new com.echo.Controls.Actions.Action();
+            this.ac_SelectNone = new com.echo.Controls.Actions.Action();
+            this.ac_Repair = new com.echo.Controls.Actions.Action();
+            this.queriesTableAdapter1 = new com.echo.XT2005.DBTableAdapters.QueriesTableAdapter();
             this.mainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -61,6 +66,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.contextMenu.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainActionlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,13 +189,42 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.splitContainer3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1107, 594);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_REPAIRDATA;
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.tvRepair);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.btnRepair);
+            this.splitContainer3.Size = new System.Drawing.Size(1101, 588);
+            this.splitContainer3.SplitterDistance = 367;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // tvRepair
+            // 
+            this.tvRepair.CheckBoxes = true;
+            this.tvRepair.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvRepair.FullRowSelect = true;
+            this.tvRepair.Location = new System.Drawing.Point(0, 0);
+            this.tvRepair.Name = "tvRepair";
+            this.tvRepair.Size = new System.Drawing.Size(367, 588);
+            this.tvRepair.TabIndex = 0;
             // 
             // D01TableAdapter
             // 
@@ -205,6 +243,17 @@
             this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
             this.bToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.bToolStripMenuItem1.Text = "清除全选(&N)";
+            // 
+            // btnRepair
+            // 
+            this.mainActionlist.SetAction(this.btnRepair, this.ac_Repair);
+            this.btnRepair.Location = new System.Drawing.Point(82, 34);
+            this.btnRepair.Name = "btnRepair";
+            this.btnRepair.Size = new System.Drawing.Size(75, 23);
+            this.btnRepair.TabIndex = 0;
+            this.btnRepair.Text = "修复(&R)";
+            this.btnRepair.UseVisualStyleBackColor = true;
+            this.btnRepair.Click += new System.EventHandler(this.OnRepair);
             // 
             // bToolStripMenuItem
             // 
@@ -234,17 +283,8 @@
             this.mainActionlist.Actions.Add(this.ac_SelectAll);
             this.mainActionlist.Actions.Add(this.ac_SelectNone);
             this.mainActionlist.Actions.Add(this.ac_Set);
+            this.mainActionlist.Actions.Add(this.ac_Repair);
             this.mainActionlist.ContainerControl = this;
-            // 
-            // ac_SelectAll
-            // 
-            this.ac_SelectAll.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTALL;
-            this.ac_SelectAll.Execute += new System.EventHandler(this.OnSelectAll);
-            // 
-            // ac_SelectNone
-            // 
-            this.ac_SelectNone.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTNONE;
-            this.ac_SelectNone.Execute += new System.EventHandler(this.OnSelectNone);
             // 
             // ac_Login
             // 
@@ -261,6 +301,22 @@
             this.ac_Set.Text = "设置报告期(&R)";
             this.ac_Set.Update += new System.EventHandler(this.ac_Set_Update);
             this.ac_Set.Execute += new System.EventHandler(this.OnSet);
+            // 
+            // ac_SelectAll
+            // 
+            this.ac_SelectAll.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTALL;
+            this.ac_SelectAll.Execute += new System.EventHandler(this.OnSelectAll);
+            // 
+            // ac_SelectNone
+            // 
+            this.ac_SelectNone.Text = global::com.echo.XT2005.Properties.Settings.Default.STR_AC_SELECTNONE;
+            this.ac_SelectNone.Execute += new System.EventHandler(this.OnSelectNone);
+            // 
+            // ac_Repair
+            // 
+            this.ac_Repair.Text = "修复(&R)";
+            this.ac_Repair.Update += new System.EventHandler(this.OnRepairUpdate);
+            this.ac_Repair.Execute += new System.EventHandler(this.OnRepair);
             // 
             // MainForm
             // 
@@ -284,6 +340,10 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
             this.contextMenu.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainActionlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,6 +376,11 @@
         private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem1;
         private com.echo.Controls.Actions.Action ac_Set;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem1;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.TreeView tvRepair;
+        private System.Windows.Forms.Button btnRepair;
+        private com.echo.Controls.Actions.Action ac_Repair;
+        private com.echo.XT2005.DBTableAdapters.QueriesTableAdapter queriesTableAdapter1;
     }
 }
 

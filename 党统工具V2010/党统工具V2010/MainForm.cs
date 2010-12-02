@@ -8,14 +8,15 @@ using System.Windows.Forms;
 
 namespace com.echo.XT2005
 {
-   /// <summary>
-   /// 主窗体类
-   /// </summary>
+    /// <summary>
+    /// 主窗体类
+    /// </summary>
     public partial class MainForm : Form
     {
         public MainForm()
         {
             InitializeComponent();
+            getGS();
         }
 
         private Boolean isLinked;
@@ -39,19 +40,19 @@ namespace com.echo.XT2005
 
                 TreeNode node = tvOrg.Nodes.Add(dr.D0107, dr.D0101);
                 node.ToolTipText = dr.D0107;
-                
+
                 D01 = D01TableAdapter.GetDataBySubOrg();
                 foreach (com.echo.XT2005.DB.D01Row row in D01)
                 {
-                    TreeNode n = node.Nodes.Add(row.D0107, "(" + row.D0107.Substring(row.D0107.Length-3,3) + ")" + row.D0101);
+                    TreeNode n = node.Nodes.Add(row.D0107, "(" + row.D0107.Substring(row.D0107.Length - 3, 3) + ")" + row.D0101);
                     n.ToolTipText = row.D0107;
                 }
                 isLinked = true;
                 tvOrg.Nodes[0].ExpandAll();
             }
-            catch (System.Data.Odbc.OdbcException ex) 
+            catch (System.Data.Odbc.OdbcException ex)
             {
-                MessageBox.Show("数据库连接错误，请检查数据库配置\n"+ex.Message);
+                MessageBox.Show("数据库连接错误，请检查数据库配置\n" + ex.Message);
                 isLinked = false;
             }
 
@@ -72,7 +73,7 @@ namespace com.echo.XT2005
             foreach (TreeNode item in tvOrg.Nodes)
             {
                 item.Checked = true;
-               
+
                 foreach (TreeNode i in item.Nodes)
                 {
                     i.Checked = true;
@@ -113,7 +114,7 @@ namespace com.echo.XT2005
             SetForm form1 = new SetForm();
             if (form1.ShowDialog(this) == DialogResult.OK)
             {
-                
+
                 //添加读取报告期参数代码
             }
         }
@@ -121,6 +122,31 @@ namespace com.echo.XT2005
         private void ac_Set_Update(object sender, EventArgs e)
         {
             ac_Set.Enabled = this.isLinked;
+        }
+
+        private void getGS()
+        {
+            System.Collections.Specialized.StringCollection list = com.echo.XT2005.Properties.Settings.Default.gsTitleList;
+            foreach (string item in list)
+            {
+                tvRepair.Nodes.Add(item);
+            }
+        }
+
+        private void OnRepair(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OnRepairUpdate(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach (TreeNode node in tvRepair.Nodes)
+            {
+                if (node.Checked)
+                    i += 1;
+            }
+            btnRepair.Enabled = i > 0;
         }
     }
 }
