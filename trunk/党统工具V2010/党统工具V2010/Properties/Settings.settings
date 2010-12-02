@@ -46,5 +46,40 @@
     <Setting Name="STR_CANCEL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">取消(&amp;C)</Value>
     </Setting>
+    <Setting Name="STR_REPAIRDATA" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">数据修复</Value>
+    </Setting>
+    <Setting Name="gsList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;UPDATE A01 SET A0159='5' WHERE A0159='4' AND A0000 IN ( SELECT A0000 FROM C02 WHERE NOT (C0217 IS NULL OR C0217 = '') ) &lt;/string&gt;
+  &lt;string&gt;DELETE FROM C01 WHERE A0000 IN ( SELECT A01.A0000 FROM A01,C01 WHERE A01.A0000=C01.A0000 AND (A0159='4' OR A0159='5') ORDER BY A0159) &lt;/string&gt;
+  &lt;string&gt;UPDATE A01 SET A0141 = NULL,A0144 = NULL WHERE (A0141 ISNULL OR TRIM(A0141)='') AND NOT (A0144 ISNULL OR  TRIM(A0144) = '') OR NOT ((A0141 &amp;gt;'03' AND A0141 &amp;lt; '12' AND LENGTH(A0141)=2) OR (A0141 ISNULL OR A0141='')) &lt;/string&gt;
+  &lt;string&gt;UPDATE C03 SET C0323 = '' WHERE C0323  ISNULL &lt;/string&gt;
+  &lt;string&gt;UPDATE A01 SET A0162=ISNULL((SELECT D1601A FROM D01,D16  WHERE D01.D0107=D16.D0107  AND D01.D0107=A0160 AND D01.D0107 IN  (SELECT D0107 FROM D16 GROUP BY D0107 HAVING COUNT(D0107)=1)),A0162)  &lt;/string&gt;
+  &lt;string&gt;UPDATE A01 SET A0159='7' WHERE (A0159='4' OR A0159='5') AND A0000 IN ( SELECT A0000 FROM C09 WHERE (C0921 LIKE '2%') ) &lt;/string&gt;
+  &lt;string&gt;UPDATE C03 SET C0323='' WHERE A0000 IN  (SELECT A0000 FROM A01 WHERE A0159&amp;lt;&amp;gt;'6') &lt;/string&gt;
+  &lt;string&gt;DELETE FROM A01 WHERE OCTET_LENGTH(A0000)&amp;gt;50 &lt;/string&gt;
+  &lt;string&gt;UPDATE D16 SET SORTID=1 WHERE SORTID IS NULL &lt;/string&gt;
+  &lt;string&gt;UPDATE C03 SET C0304=ISNULL((SELECT C0201 FROM C02 WHERE C03.A0000=C02.A0000 AND C0307='001'),C0304) WHERE C0307='001' &lt;/string&gt;
+  &lt;string&gt;UPDATE C02 SET C0257=ISNULL((SELECT A0160 FROM A01 WHERE A01.A0000=C02.A0000),C0257) WHERE C0211='11111' AND A0000 IN (SELECT A0000 FROM C03 WHERE C0307='001') &lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="gsTitleList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;修复正式党员标识&lt;/string&gt;
+  &lt;string&gt;删除培养发展信息&lt;/string&gt;
+  &lt;string&gt;清除其他党团&lt;/string&gt;
+  &lt;string&gt;修正动态统计&lt;/string&gt;
+  &lt;string&gt;自动填写关系所在单位&lt;/string&gt;
+  &lt;string&gt;修复流入党员标识&lt;/string&gt;
+  &lt;string&gt;修正信息上报后变为历史党员&lt;/string&gt;
+  &lt;string&gt;删除不能显示详细信息人员&lt;/string&gt;
+  &lt;string&gt;修复组织数不统计&lt;/string&gt;
+  &lt;string&gt;新入党根据入党时间填写进入支部时间&lt;/string&gt;
+  &lt;string&gt;团员推优自动填写入党时所在党支部&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

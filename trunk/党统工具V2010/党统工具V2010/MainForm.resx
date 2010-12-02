@@ -138,6 +138,9 @@
   <metadata name="ac_Set.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>497, 56</value>
   </metadata>
+  <metadata name="ac_Repair.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>586, 56</value>
+  </metadata>
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>108, 56</value>
   </metadata>
@@ -149,5 +152,8 @@
   </metadata>
   <metadata name="D01TableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>623, 17</value>
+  </metadata>
+  <metadata name="queriesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>694, 56</value>
   </metadata>
 </root>
